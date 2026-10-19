@@ -1,0 +1,33 @@
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node.js
+node_modules/
+
+# Build output
+dist/
+build/
+.vite/
+
+# Local repository clones
+backend/repositories/
+
+# Logs and temporary files
+*.log
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.idea/
