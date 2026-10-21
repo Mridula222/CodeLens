@@ -17,6 +17,9 @@ import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 
 import DependencyGraph from "./DependencyGraph";
 
+const API_URL =
+  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+
 /* ------------------------------------------------------------------
    MOCK DATA
    Everything below is sample data used to preview the dashboard.
@@ -310,7 +313,7 @@ function RepoForm({ onSubmitted, onStatusChange }) {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/repositories/analyze",
+        `${API_URL}/api/repositories/analyze`,
         {
           method: "POST",
           headers: {
@@ -1296,7 +1299,7 @@ function FilesPage({ analysis }) {
       });
 
       const response = await fetch(
-        `http://127.0.0.1:8000/api/repositories/file?${params.toString()}`,
+        `${API_URL}/api/repositories/file?${params.toString()}`,
       );
 
       const data = await response.json();
